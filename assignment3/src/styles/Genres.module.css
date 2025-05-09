@@ -1,87 +1,87 @@
-/* Genres.module.css */
+/* styles/Genres.module.css */
 
 /* General container for the page */
 .container {
-    padding: 3rem;
-    background: linear-gradient(135deg, #2a2a2a, #121212); /* Dark gradient background */
-    color: #fff;
-    min-height: 100vh;
-  }
-  
-  /* Page title */
+  padding: 3rem;
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: background var(--transition-duration), color var(--transition-duration);
+}
+
+/* Page title */
+.pageTitle {
+  font-size: 3rem;
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid for genres */
+.genreGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+/* Genre card */
+.genreCard {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition-duration), background var(--transition-duration);
+}
+
+.genreCard:hover {
+  background: var(--card-hover-bg);
+  transform: scale(1.05);
+}
+
+/* Genre title */
+.genreTitle {
+  font-size: 2rem;
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+/* Movie list */
+.movieList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.movieItem {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: var(--text-secondary);
+}
+
+.movieLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-duration);
+}
+
+.movieLink:hover {
+  color: var(--text-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
   .pageTitle {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem;
   }
-  
-  /* Grid for genres */
+
   .genreGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    padding-top: 2rem;
+    grid-template-columns: 1fr;
   }
-  
-  /* Genre card */
-  .genreCard {
-    background: #2c2c2c;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .genreCard:hover {
-    background: linear-gradient(135deg, #b71c1c, #d32f2f); /* Dark red gradient */
-    transform: scale(1.05);
-  }
-  
-  /* Genre title */
-  .genreTitle {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 1rem;
-  }
-  
-  /* Movie list */
-  .movieList {
-    list-style-type: none;
-    padding: 0;
-  }
-  
+
   .movieItem {
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-    color: #ccc;
+    font-size: 1rem;
   }
-  
-  .movieLink {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .movieLink:hover {
-    color: #fff;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 600px) {
-    .pageTitle {
-      font-size: 2.5rem;
-    }
-  
-    .genreGrid {
-      grid-template-columns: 1fr;
-    }
-  
-    .movieItem {
-      font-size: 1rem;
-    }
-  }
-  
+}

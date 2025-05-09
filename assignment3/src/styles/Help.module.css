@@ -1,78 +1,78 @@
-/* Help.module.css */
+/* styles/Help.module.css */
 
 /* General container for the page */
 .container {
-    padding: 3rem;
-    background: linear-gradient(135deg, #2a2a2a, #121212); /* Dark gradient background */
-    color: #fff;
-    min-height: 100vh;
-  }
-  
-  /* Page title */
+  padding: 3rem;
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: background var(--transition-duration), color var(--transition-duration);
+}
+
+/* Page title */
+.pageTitle {
+  font-size: 3rem;
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Body content of the help page */
+.pageBody {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Help Topics Section */
+.helpTopics {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.helpTopics h3 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+/* List of help topics */
+.topicList {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Topic link */
+.topicLink {
+  font-size: 1.2rem;
+  color: var(--accent);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color var(--transition-duration);
+}
+
+.topicLink:hover {
+  color: var(--accent-highlight);
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
   .pageTitle {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem;
   }
-  
-  /* Body content of the help page */
+
   .pageBody {
-    font-size: 1.2rem;
-    color: #ccc;
-    line-height: 1.6;
-    margin-top: 1rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 1rem;
   }
-  
-  /* Help Topics Section */
-  .helpTopics {
-    margin-top: 2rem;
-    text-align: center;
-  }
-  
-  .helpTopics h3 {
-    font-size: 1.8rem;
-    color: #fff;
-    margin-bottom: 1rem;
-  }
-  
-  /* List of help topics */
-  .topicList {
-    list-style-type: none;
-    padding: 0;
-  }
-  
+
   .topicLink {
-    font-size: 1.2rem;
-    color: #303f9f; /* Blue color for links */
-    text-decoration: none;
-    display: block;
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
+    font-size: 1rem;
   }
-  
-  .topicLink:hover {
-    color: #b71c1c; /* Dark red color on hover */
-    text-decoration: underline;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 600px) {
-    .pageTitle {
-      font-size: 2.5rem;
-    }
-  
-    .pageBody {
-      font-size: 1rem;
-    }
-  
-    .topicLink {
-      font-size: 1rem;
-    }
-  }
-  
+}

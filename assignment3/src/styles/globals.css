@@ -1,55 +1,121 @@
-/* globals.css */
+/* styles/globals.css */
 
-/* Global CSS variables for colors and other global styles */
+/* Dark-mode defaults */
 :root {
-  --primary-bg: #121212; /* Dark background */
-  --secondary-bg: #1a1a1a; /* Slightly lighter dark */
-  --primary-color: #b71c1c; /* Dark red accent color */
-  --highlight-color: #d32f2f; /* Slightly brighter red for hover or highlights */
-  --border-radius: 12px; /* Rounded borders */
-  --transition-duration: 0.3s;
+  --bg-primary: #121212;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #fff;
+  --text-secondary: #ccc;
+  --accent: #b71c1c;
+  --accent-highlight: #d32f2f;
+  --card-bg: #2c2c2c;
+  --card-hover-bg: linear-gradient(135deg, #b71c1c, #d32f2f);
   --font-family: 'Segoe UI', sans-serif;
-  --card-width: 260px;
-  --card-height: 350px;
   --font-light: 300;
   --font-regular: 400;
   --font-bold: 700;
+  --border-radius: 12px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --transition-duration: 0.3s;
 }
 
-/* Global styles for the page */
+/* Light-mode overrides */
+body.light-theme {
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #e0e0e0;
+  --text-primary: #222;
+  --text-secondary: #555;
+  --accent: #1976d2;
+  --accent-highlight: #64b5f6;
+  --card-bg: #fff;
+  --card-hover-bg: linear-gradient(135deg, #1976d2, #64b5f6);
+}
+
+/* Base page styles */
 body {
-  background-color: var(--primary-bg);
-  color: #fff;
-  font-family: var(--font-family);
-  padding: 0;
   margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--transition-duration),
+              color var(--transition-duration);
   overflow-x: hidden;
-  font-weight: var(--font-regular);
-  transition: background-color var(--transition-duration), color var(--transition-duration);
 }
 
+/* Headings */
 h1, h2, h3 {
-  color: #fff;
   font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin: 0;
 }
 
+/* Paragraphs */
 p {
-  color: #ddd;
   font-weight: var(--font-light);
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
-/* Global body background */
+/* Container utility */
 .container {
   padding: 3rem;
-  background: linear-gradient(45deg, #2a2a2a, #121212);
+  background: linear-gradient(45deg, var(--bg-secondary), var(--bg-primary));
   min-height: 100vh;
   text-align: center;
 }
 
-/* Global card hover effects */
+/* Card base */
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: background var(--transition-duration),
+              transform var(--transition-duration),
+              box-shadow var(--transition-duration);
+  overflow: hidden;
+}
+
+/* Card hover effect */
 .card:hover {
+  background: var(--card-hover-bg);
   transform: scale(1.05);
-  background: linear-gradient(135deg, #b71c1c, #d32f2f);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Buttons */
+button {
+  background: var(--accent);
+  color: var(--text-primary);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
+  font-weight: var(--font-bold);
+  cursor: pointer;
+  transition: background var(--transition-duration);
+}
+
+button:hover {
+  background: var(--accent-highlight);
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition-duration);
+}
+
+a:hover {
+  color: var(--accent-highlight);
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 {
+  margin-top: 1rem;
 }

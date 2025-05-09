@@ -1,20 +1,21 @@
-/* Home.module.css */
+/* styles/Home.module.css */
 
 /* General page container */
 .container {
   padding: 2rem;
-  background-color: #1a1a1a; /* Dark background */
-  color: white;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
   min-height: 100vh;
+  transition: background-color var(--transition-duration), color var(--transition-duration);
 }
 
 /* Heading */
 .heading {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: var(--font-bold);
   margin-bottom: 2rem;
   text-align: center;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 /* Grid for movie cards */
@@ -27,17 +28,17 @@
 
 /* Movie card */
 .card {
-  background-color: #2c2c2c;
+  background-color: var(--card-bg);
   padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition-duration), background var(--transition-duration);
   text-decoration: none;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .card:hover {
-  background: linear-gradient(135deg, #b71c1c, #d32f2f); /* Dark red gradient */
+  background: var(--card-hover-bg);
   transform: scale(1.05);
 }
 
@@ -48,13 +49,13 @@
 
 .cardTitle {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: var(--font-bold);
   margin-bottom: 0.5rem;
 }
 
 .cardText {
   font-size: 1.2rem;
-  color: #ccc;
+  color: var(--text-secondary);
 }
 
 /* Button Group Styling */
@@ -71,15 +72,15 @@
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   border: none;
-  background-color: #ff6f61; /* Dark red button */
-  color: white;
+  background-color: var(--accent);
+  color: var(--text-primary);
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-duration);
 }
 
 .button:hover {
-  background-color: #e95b4d; /* Lighter red on hover */
+  background-color: var(--accent-highlight);
 }
 
 /* Responsive adjustments */
@@ -97,4 +98,3 @@
     align-items: center;
   }
 }
-

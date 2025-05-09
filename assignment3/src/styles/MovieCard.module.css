@@ -1,13 +1,14 @@
-/* MovieCard.module.css */
+/* styles/MovieCard.module.css */
 
 /* General container */
 .container {
   padding: 3rem;
-  background: linear-gradient(45deg, #2a2a2a, #121212);
-  color: #fff;
+  background: linear-gradient(45deg, var(--bg-secondary), var(--bg-primary));
+  color: var(--text-primary);
   min-height: 100vh;
   font-family: var(--font-family);
   text-align: center;
+  transition: background var(--transition-duration), color var(--transition-duration);
 }
 
 /* Heading */
@@ -15,7 +16,7 @@
   font-size: 3rem;
   font-weight: var(--font-bold);
   margin-bottom: 2rem;
-  color: #fff;
+  color: var(--text-primary);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -28,15 +29,15 @@
   padding: 1rem;
   font-size: 1rem;
   border-radius: 8px;
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--accent);
+  color: var(--text-primary);
   cursor: pointer;
   width: 220px;
+  transition: background var(--transition-duration), color var(--transition-duration);
 }
 
 .genreSelect:hover {
-  background-color: #d32f2f;
-  transition: background-color var(--transition-duration);
+  background-color: var(--accent-highlight);
 }
 
 /* Grid for movie cards */
@@ -45,18 +46,20 @@
   grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
   gap: 2rem;
   padding: 2rem;
-  background-color: #2a2a2a;
+  background-color: var(--bg-secondary);
   min-height: 100vh;
 }
 
 /* Styling individual movie cards */
 .card {
-  background: #1c1c1c;
+  background: var(--card-bg);
   border-radius: var(--border-radius);
   padding: 1.5rem;
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-  color: #fff;
+  transition: transform var(--transition-duration),
+              background var(--transition-duration),
+              box-shadow var(--transition-duration);
+  color: var(--text-primary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -67,8 +70,9 @@
 }
 
 .card:hover {
-  background: linear-gradient(135deg, #b71c1c, #d32f2f);
+  background: var(--card-hover-bg);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  transform: scale(1.02);
 }
 
 /* Card content (text and title) */
@@ -80,44 +84,23 @@
   font-size: 1.5rem;
   font-weight: var(--font-bold);
   margin-top: 1rem;
+  color: var(--text-primary);
 }
 
 .cardText {
   font-size: 1.2rem;
   margin-top: 0.5rem;
-  color: #ccc;
+  color: var(--text-secondary);
 }
 
 .cardText:first-of-type {
   margin-top: 0;
 }
 
-/* Card hover effects */
-.card:hover .cardTitle {
-  color: #fff;
-}
-
-.card:hover .cardText {
-  color: #fff;
-}
-
 /* Dynamic background gradients for each card */
-.card:nth-child(odd) {
-  background: linear-gradient(135deg, #b71c1c, #d32f2f);
-}
-
-.card:nth-child(even) {
-  background: linear-gradient(135deg, #c62828, #e57373);
-}
-
-.card:nth-child(3n) {
-  background: linear-gradient(135deg, #b71c1c, #8e0000);
-}
-
-.card:nth-child(4n) {
-  background: linear-gradient(135deg, #d32f2f, #b71c1c);
-}
-
-.card:nth-child(5n) {
-  background: linear-gradient(135deg, #c62828, #e57373);
-}
+/* If you still want per-card gradients, map them to the hover gradient var */
+.card:nth-child(odd)    { background: var(--card-hover-bg); }
+.card:nth-child(even)   { background: var(--card-hover-bg); }
+.card:nth-child(3n)     { background: var(--card-hover-bg); }
+.card:nth-child(4n)     { background: var(--card-hover-bg); }
+.card:nth-child(5n)     { background: var(--card-hover-bg); }

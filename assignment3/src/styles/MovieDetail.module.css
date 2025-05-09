@@ -1,78 +1,76 @@
-/* MovieDetail.module.css */
+/* styles/MovieDetail.module.css */
 
 /* General container for the page */
 .container {
-    padding: 3rem;
-    background: linear-gradient(135deg, #2a2a2a, #121212); /* Dark gradient background */
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background var(--transition-duration), color var(--transition-duration);
+}
+
+/* Title styling */
+.movieTitle {
+  font-size: 3rem;
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Movie description */
+.movieDescription {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+}
+
+/* Movie details (year, rating) */
+.movieDetails {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+}
+
+/* Button styling */
+.viewDirectorButton {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  background-color: var(--accent);
+  color: var(--text-primary);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background var(--transition-duration), color var(--transition-duration);
+  margin-top: 2rem;
+}
+
+.viewDirectorButton:hover {
+  background-color: var(--accent-highlight);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
   }
-  
-  /* Title styling */
+
   .movieTitle {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    font-size: 2rem;
   }
-  
-  /* Movie description */
+
   .movieDescription {
-    font-size: 1.2rem;
-    color: #ccc;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  /* Movie details (year, rating) */
-  .movieDetails {
-    font-size: 1.1rem;
-    color: #ddd;
-    margin-top: 1rem;
-  }
-  
-  /* Button styling */
-  .viewDirectorButton {
-    padding: 0.75rem 2rem;
     font-size: 1rem;
-    background-color: #b71c1c; /* Dark red */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 2rem;
   }
-  
-  .viewDirectorButton:hover {
-    background-color: #d32f2f; /* Lighter red on hover */
+
+  .viewDirectorButton {
+    padding: 0.75rem 1.5rem;
   }
-  
-  /* Responsive adjustments */
-  @media (max-width: 600px) {
-    .container {
-      padding: 1rem;
-    }
-  
-    .movieTitle {
-      font-size: 2rem;
-    }
-  
-    .movieDescription {
-      font-size: 1rem;
-    }
-  
-    .viewDirectorButton {
-      padding: 0.75rem 1.5rem;
-    }
-  }
-  
+}

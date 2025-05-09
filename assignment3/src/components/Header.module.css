@@ -1,0 +1,37 @@
+/* src/components/Header.module.css */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--bg-secondary);        /* was --secondary-bg */
+  color: var(--text-primary);             /* ensure text flips too */
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: var(--font-bold);
+  color: var(--accent);                   /* was --primary-color */
+  text-decoration: none;
+}
+
+.link {
+    margin: 20px;
+  color: var(--text-primary);             /* was #fff */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.link:hover {
+  color: var(--accent-highlight);         /* was --highlight-color */
+}
+.toggle {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--text-primary);             /* was #fff */
+}

@@ -1,20 +1,22 @@
+/* styles/MoviesByGenre.module.css (or whichever module) */
+
 
 
 .container {
   padding: 3rem;
-  background: linear-gradient(45deg, #2a2a2a, #121212);
-  color: #fff;
+  background: linear-gradient(45deg, var(--bg-secondary), var(--bg-primary));
+  color: var(--text-primary);
   min-height: 100vh;
   font-family: var(--font-family);
   text-align: center;
-    --card-width: 220px;
-  --card-height: 300px;
+  transition: background var(--transition-duration), color var(--transition-duration);
 }
 
 .heading {
   font-size: 2.5rem;
   font-weight: var(--font-bold);
   margin-bottom: 2rem;
+  color: var(--text-primary);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -26,13 +28,13 @@
 }
 
 .card {
-  background: #1c1c1c;
+  background-color: var(--card-bg);
   border-radius: var(--border-radius);
   padding: 1.5rem;
   box-shadow: var(--shadow);
   transition: transform var(--transition-duration),
-              background-color var(--transition-duration);
-  color: #fff;
+              background var(--transition-duration);
+  color: var(--text-primary);
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -42,7 +44,7 @@
 }
 
 .card:hover {
-  background: linear-gradient(135deg, #b71c1c, #d32f2f);
+  background: var(--card-hover-bg);
   transform: translateY(-4px);
 }
 
@@ -50,10 +52,11 @@
   font-size: 1.4rem;
   font-weight: var(--font-bold);
   margin-bottom: 0.75rem;
+  color: var(--text-primary);
 }
 
 .cardText {
   font-size: 1rem;
-  color: #ccc;
+  color: var(--text-secondary);
   margin: 0.25rem 0;
 }
