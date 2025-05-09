@@ -1,23 +1,32 @@
-import useSWR from 'swr';
-import styles from '@/styles/Directors.module.css'; // Importing the Directors module styles
+// pages/directors/index.js
+import Link from "next/link";
+import styles from "@/styles/Directors.module.css";
+import data from "@/data.json";
 
-const fetcher = url => fetch(url).then(res => res.json());
+export async function getStaticProps() {
+  // Directly import data.json at build time
+  const { directors } = data;
 
-export default function Directors() {
-  const { data, error } = useSWR('/api/director', fetcher);
-  
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  return {
+    props: { directors },
+    revalidate: 10, // ISR: update every 10 seconds
+  };
+}
 
+export default function Directors({ directors }) {
   return (
     <div className={styles.container}>
       <h1 className={styles.pageTitle}>Directors</h1>
       <div className={styles.directorGrid}>
-        {data.map(d => (
-          <div key={d.id} className={styles.directorCard}>
+        {directors.map((d) => (
+          <Link
+            key={d.id}
+            href={`/directors/${d.id}`}
+            className={styles.directorCard}
+          >
             <h2 className={styles.directorName}>{d.name}</h2>
             <p className={styles.directorBio}>{d.biography}</p>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

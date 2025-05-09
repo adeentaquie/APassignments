@@ -1,0 +1,59 @@
+
+
+.container {
+  padding: 3rem;
+  background: linear-gradient(45deg, #2a2a2a, #121212);
+  color: #fff;
+  min-height: 100vh;
+  font-family: var(--font-family);
+  text-align: center;
+    --card-width: 220px;
+  --card-height: 300px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: var(--font-bold);
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.movieGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.card {
+  background: #1c1c1c;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition-duration),
+              background-color var(--transition-duration);
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: var(--card-width);
+  height: var(--card-height);
+}
+
+.card:hover {
+  background: linear-gradient(135deg, #b71c1c, #d32f2f);
+  transform: translateY(-4px);
+}
+
+.cardTitle {
+  font-size: 1.4rem;
+  font-weight: var(--font-bold);
+  margin-bottom: 0.75rem;
+}
+
+.cardText {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0.25rem 0;
+}
