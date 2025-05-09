@@ -1,0 +1,77 @@
+/* Directors.module.css */
+
+/* General container for the page */
+.container {
+    padding: 3rem;
+    background: linear-gradient(135deg, #2a2a2a, #121212); /* Dark gradient background */
+    color: #fff;
+    min-height: 100vh;
+  }
+  
+  /* Page title */
+  .pageTitle {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Grid for directors */
+  .directorGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  
+  /* Director card */
+  .directorCard {
+    background: #2c2c2c;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .directorCard:hover {
+    background: linear-gradient(135deg, #b71c1c, #d32f2f); /* Dark red gradient */
+    transform: scale(1.05);
+  }
+  
+  /* Director's name */
+  .directorName {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  
+  /* Director's biography */
+  .directorBio {
+    font-size: 1.2rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-top: 1rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .pageTitle {
+      font-size: 2.5rem;
+    }
+  
+    .directorGrid {
+      grid-template-columns: 1fr;
+    }
+  
+    .directorName {
+      font-size: 1.8rem;
+    }
+  
+    .directorBio {
+      font-size: 1rem;
+    }
+  }
+  

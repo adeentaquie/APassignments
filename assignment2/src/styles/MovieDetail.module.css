@@ -1,4 +1,4 @@
-/* Director.module.css */
+/* MovieDetail.module.css */
 
 /* General container for the page */
 .container {
@@ -13,8 +13,8 @@
     text-align: center;
   }
   
-  /* Director's name styling */
-  .directorName {
+  /* Title styling */
+  .movieTitle {
     font-size: 3rem;
     font-weight: 700;
     color: #fff;
@@ -22,15 +22,39 @@
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
   }
   
-  /* Director's biography */
-  .directorBio {
+  /* Movie description */
+  .movieDescription {
     font-size: 1.2rem;
     color: #ccc;
     line-height: 1.6;
-    margin-top: 1rem;
+    margin-bottom: 1.5rem;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+  }
+  
+  /* Movie details (year, rating) */
+  .movieDetails {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-top: 1rem;
+  }
+  
+  /* Button styling */
+  .viewDirectorButton {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    background-color: #b71c1c; /* Dark red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 2rem;
+  }
+  
+  .viewDirectorButton:hover {
+    background-color: #d32f2f; /* Lighter red on hover */
   }
   
   /* Responsive adjustments */
@@ -39,12 +63,16 @@
       padding: 1rem;
     }
   
-    .directorName {
+    .movieTitle {
       font-size: 2rem;
     }
   
-    .directorBio {
+    .movieDescription {
       font-size: 1rem;
+    }
+  
+    .viewDirectorButton {
+      padding: 0.75rem 1.5rem;
     }
   }
   
